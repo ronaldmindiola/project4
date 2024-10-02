@@ -1,0 +1,9 @@
+---
+import { navData } from '@/site.config'
+
+const { brand } = navData
+
+---
+<a href="/" class={`mx-2 text-2xl font-bold drop-shadow-lg ${brand.class}`}>
+    {brand.text}
+</a>

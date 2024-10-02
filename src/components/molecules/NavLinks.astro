@@ -1,0 +1,23 @@
+---
+import { navData } from '@/site.config'
+
+const { links } = navData
+const pathName = new URL(Astro.request.url).pathname
+---
+<div class="hidden md:block">
+    <div class="ml-10 flex items-baseline space-x-4">
+      {links.map((link) => {
+        const isActive = pathName === link.href; // Compara la ruta actual con el href del enlace
+        return (
+            <>
+                <a
+                    href={link.href}
+                    class={`text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${isActive ? 'bg-gray-700 text-slate-400' : ''}`}
+                >
+                    {link.text}
+                </a>
+            </>
+        )
+      })}
+    </div>
+  </div>

@@ -1,11 +1,15 @@
 ---
-import Layouts from "../layouts/Layouts.astro";
+import Header from "../components/organisms/Header.astro";
+import Footer from "../components/organisms/Footer.astro";
+import Layout from "../layouts/Layouts.astro";
+import {metadata} from '@/site.config'
+
+const title = metadata.title
+const description = metadata.description
 ---
 
-<Layouts type="landing">
-  <div class="bg-slate-200">
-    <h1 class="text-3xl font-black flex h-screen items-center justify-center">
-      Astro + Tailwind + React + Typescript + MDX
-    </h1>
-  </div>
-</Layouts>
+<Layout
+  type="landing"
+  title={title}
+  description={description}
+/>

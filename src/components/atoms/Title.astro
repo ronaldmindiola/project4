@@ -1,0 +1,25 @@
+---
+export interface Props {
+  text: string;
+  size?: 'small' | 'medium' | 'large';
+  color?: string;
+}
+
+const { text, size = 'medium', color = 'black' } = Astro.props;
+
+const sizeClasses = {
+  small: 'text-xl',
+  medium: 'text-2xl',
+  large: 'text-4xl',
+};
+
+const sizeClass = sizeClasses[size] || sizeClasses.medium;
+---
+
+<h1 
+  class={`${sizeClass} text-${color} leading-tight`} 
+  aria-level={size === 'large' ? 1 : size === 'medium' ? 2 : 3} 
+  role="heading"
+>
+  {text}
+</h1>

@@ -1,0 +1,16 @@
+---
+const { title, description } = Astro.props;
+---
+<div><header class="p-4 bg-gray-800 text-white">
+    <h1>{title}</h1>
+    <!-- Aquí puedes agregar un menú de navegación -->
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="p-4 bg-gray-800 text-white">
+    <p>© 2024 Mi Sitio Web</p>
+  </footer></div>
+  

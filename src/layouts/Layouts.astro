@@ -1,20 +1,28 @@
 ---
-import { metadata } from "../site.config";
-const { title, lang, charset } = metadata;
----
+import LayoutDefault from './LayoutDefault.astro';
+import LayoutLanding from './LayoutLanding.astro';
 
-<html lang={lang}>
-  <head>
-    <meta charset={charset} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <div class="bg-slate-800">
-      <slot name="header" />
-    </div>
-    <slot />
-  </body>
+export interface Props {
+  type: 'landing' | 'default';
+  title: string;
+  description: string;
+}
+
+const { type, title, description } = Astro.props;
+
+// Selecciona el layout correspondiente
+const SelectedLayout = type === 'landing' ? LayoutLanding : LayoutDefault;
+---
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description} />
+</head>
+<body class="bg-slate-950">
+  <SelectedLayout title={title} description={description}>
+  <slot />
+</SelectedLayout>
+</body>
 </html>

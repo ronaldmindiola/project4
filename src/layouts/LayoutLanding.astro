@@ -1,0 +1,164 @@
+---
+import Hero from "../components/organisms/Hero.astro";
+import heroImage from "../../src/assets/YaLogoDark.png"
+import Navigation from "@/components/molecules/Navigation.astro";
+const { title, description } = Astro.props;
+---
+
+  <!-- Navigation -->
+  <Navigation />
+  
+
+  <!-- Hero Section -->
+   <Hero
+    title={`Soluciones Eléctricas Ya!`}
+    subtitle="Innovación eléctrica al alcance de tu mano. Más de 20 años encendiendo tus ideas."
+    primaryBtn="Descubre Nuestras Soluciones"
+    primaryBtnURL="/productos"
+    secondaryBtn="Contactar Equipo de Ventas"
+    secondaryBtnURL="/contact"
+    src={heroImage}
+    alt="Imagen de productos eléctricos de Soluciones Eléctricas YA SAS"
+    />
+  <header class="bg-blue-600 text-white text-center py-20">
+    <h2 class="text-4xl font-bold">Transforma Tu Vida Hoy</h2>
+    <p class="mt-4">Únete a miles que ya están disfrutando de nuestros servicios excepcionales.</p>
+    <a href="#signup" class="mt-6 inline-block bg-yellow-500 text-black py-2 px-4 rounded">Regístrate Ahora</a>
+  </header>
+
+  <!-- Info Section -->
+  <section id="offer" class="p-6 text-center">
+    <h2 class="text-3xl font-semibold">Nuestra Oferta</h2>
+    <p class="mt-2">Ofrecemos un servicio excepcional que se adapta a tus necesidades.</p>
+  </section>
+
+  <!-- Advantages Section -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+    <div class="advantage bg-white rounded-lg shadow p-4">
+      <h3 class="font-bold">Fácil de Usar</h3>
+      <p>Nuestra plataforma es intuitiva y fácil de navegar.</p>
+    </div>
+    <div class="advantage bg-white rounded-lg shadow p-4">
+      <h3 class="font-bold">Soporte 24/7</h3>
+      <p>Estamos aquí para ayudarte en cualquier momento.</p>
+    </div>
+    <div class="advantage bg-white rounded-lg shadow p-4">
+      <h3 class="font-bold">Resultados Comprobados</h3>
+      <p>Únete a nuestros clientes satisfechos y ve los resultados por ti mismo.</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="bg-gray-100 p-6">
+    <h2 class="text-center text-3xl font-semibold">Características Clave</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+      <div class="feature-item bg-white rounded-lg shadow p-4">
+        <h3 class="font-bold">Acceso Móvil</h3>
+        <p>Accede a nuestros servicios desde cualquier dispositivo.</p>
+      </div>
+      <div class="feature-item bg-white rounded-lg shadow p-4">
+        <h3 class="font-bold">Integraciones Sencillas</h3>
+        <p>Conéctate fácilmente con otras herramientas que ya usas.</p>
+      </div>
+      <div class="feature-item bg-white rounded-lg shadow p-4">
+        <h3 class="font-bold">Seguridad Avanzada</h3>
+        <p>Tu información está protegida con los más altos estándares de seguridad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="bg-white p-6 text-center">
+    <h2 class="text-xl font-semibold">Lo Que Dicen Nuestros Clientes</h2>
+    <blockquote class="mt-4 border-l-4 border-blue-600 pl-4 italic">
+      "Este servicio ha cambiado mi vida. ¡No puedo recomendarlo lo suficiente!" - Cliente Satisfecho
+    </blockquote>
+    <blockquote class="mt-4 border-l-4 border-blue-600 pl-4 italic">
+      "El soporte es increíble y los resultados son reales." - Otro Cliente Satisfecho
+    </blockquote>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="bg-gray-100 p-6 text-center">
+    <h2 class="text-xl font-semibold">Conoce a Nuestro Equipo</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+      <!-- Aquí puedes agregar miembros del equipo -->
+      {/* Ejemplo de miembro del equipo */}
+      {["Juan", "María", "Carlos"].map(member => (
+        <div class="team-member bg-white rounded-lg shadow p-4">
+          <h3>{member}</h3>
+          {/* Puedes agregar más detalles como foto y descripción */}
+          <p>Rol en la empresa</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Objection (FAQ) Section -->
+  <section id="faq" class="bg-white p-6 text-center">
+    <h2 class="text-xl font-semibold">Preguntas Frecuentes (FAQ)</h2>
+    {/* Ejemplo de preguntas frecuentes */}
+    {[
+      { question: "¿Cómo funciona el servicio?", answer: "Nuestro servicio funciona de manera sencilla..." },
+      { question: "¿Hay un período de prueba?", answer: "Sí, ofrecemos un período de prueba gratuito..." },
+    ].map(faq => (
+      <>
+        <details open={false} class='my-2'>
+          <summary>{faq.question}</summary>
+          {faq.answer}
+        </details>
+      </>
+    ))}
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="bg-blue-600 text-white text-center p-6">
+    <h2>¡No Esperes Más!</h2>
+    <p>Únete a nosotros y transforma tu vida hoy mismo.</p>
+    <a href="#signup" class='mt-4 inline-block bg-yellow-500 text-black py-2 px-4 rounded'>Regístrate Ahora</a>
+  </section>
+
+
+<!-- Footer Section -->
+<footer class='bg-blue600 text-white text-center p6 mtauto'>
+<p>&copy;2024 Nuestro Servicio. Todos los derechos reservados.</p>
+
+<!-- Social Media Links -->
+<div class='flex justify-center space-x5 mt5'>
+<a href='#' target='_blank' rel='noopener noreferrer'>
+<i aria-hidden='true'></i><!-- Icono de Facebook --></a>
+
+<a href='#' target='_blank' rel='noopener noreferrer'>
+<i aria-hidden='true'></i><!-- Icono de Twitter --></a>
+
+<a href='#' target='_blank' rel='noopener noreferrer'>
+<i aria-hidden='true'></i><!-- Icono de Instagram --></a>
+
+<a href='#' target='_blank' rel='noopener noreferrer'>
+<i aria-hidden='true'></i><!-- Icono de LinkedIn --></a>
+
+<a href='#' target='_blank' rel='noopener noreferrer'>
+<i aria-hidden='true'></i><!-- Icono de YouTube --></a>
+
+<!-- Share Buttons -->
+<divclassName = 'flex justify-center space-x5 mt5'>
+<a href='#'><i aria-hidden = 'true'></i><!-- Botón Compartir --></a>
+
+<a href='#'><i aria-hidden = 'true'></i><!-- Botón Compartir --></a>
+
+<a href='#'><i aria-hidden = 'true'></i><!-- Botón Compartir --></a>
+
+<a href='#'><i aria-hidden = 'true'></i><!-- Botón Compartir --></a>
+
+<a href='#'><i aria-hidden = 'true'></i><!-- Botón Compartir --></a>
+
+
+<!-- Imprint, Privacy Policy, T&Cs -->
+<divclassName = 'mt5'>
+<a href='#'>Imprint | Privacy Policy | T&Cs | Contact</a>
+
+
+<!-- Cierre del Footer -->
+<footerclassName = 'bg-blue600 text-white text-center p6 mtauto'>
+<p>&copy;2024 Nuestro Servicio. Todos los derechos reservados.</p>
+
